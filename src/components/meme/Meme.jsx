@@ -3,12 +3,20 @@ import memesData from "../../memesData";
 
 const Meme = () => {
   const [memeImage, setMemeImage] = useState("");
+  const [things, setThings] = useState(["thing 1"]);
   function getmemeImage() {
     const memesArray = memesData.data.memes;
     const randomNumber = Math.floor(Math.random() * memesArray.length);
     setMemeImage(memesArray[randomNumber].url);
-    console.log(memeImage);
   }
+
+  function handleOnClick() {
+    setThings((prev) => {
+      return [...prev, `things ${things.length + 1}`];
+    });
+  }
+  const newElems = things.map((item) => <p>{item}</p>);
+
   return (
     <div>
       <main>
@@ -27,6 +35,10 @@ const Meme = () => {
           <img src={`${memeImage}`} alt="" />
         </div>
       </main>
+      <div className="add">
+        <button onClick={handleOnClick}>Add Things</button>
+        <div>{newElems}</div>
+      </div>
     </div>
   );
 };
