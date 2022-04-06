@@ -1,23 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { Navbar } from "./components/Navbar";
+import { Hero } from "./components/Hero";
+import { Card } from "./components/Card";
+import data from "./data";
+import TravelJournal from "./components/TravelJournal";
+import travelData from "./traveldata";
+import TravelCard from "./components/TravelCard";
+import Header from "./components/meme/Header";
+import Meme from "./components/meme/Meme";
 
 function App() {
+  // const cards = data.map((item) => {
+  //   return <Card key={item.id} item={item} />;
+  // });
+
+  // const travelcard = travelData.map((item) => {
+  //   return <TravelCard key={item.id} item={item} />;
+  // });
+  // console.log(travelData);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      {/* <Hero />
+      <section className="cards-list">{cards}</section>
+      <section className="travel-journal">
+        {" "}
+        <TravelJournal travelcard={travelcard} />
+      </section> */}
+      <Header />
+      <Meme />
     </div>
   );
 }
