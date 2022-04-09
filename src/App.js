@@ -1,5 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
+import { useState } from "react";
 import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
 import { Card } from "./components/Card";
@@ -19,6 +20,7 @@ function App() {
   //   return <TravelCard key={item.id} item={item} />;
   // });
   // console.log(travelData);
+  const [user, setUser] = useState("Joe");
 
   return (
     <div className="App">
@@ -29,8 +31,8 @@ function App() {
         {" "}
         <TravelJournal travelcard={travelcard} />
       </section> */}
-      <Header />
-      <Meme />
+      <Header user={user} />
+      <Meme user={user} />
     </div>
   );
 }

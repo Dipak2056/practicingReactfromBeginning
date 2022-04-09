@@ -176,3 +176,14 @@ main {
   border-radius: 15px;
   cursor: pointer;
 }
+
+.star,
+.star-empty {
+  height: 100px;
+  width: 100px;
+  border: 1px solid;
+  background-color: #918e98;
+}
+.star-empty {
+  background-color: white;
+}
