@@ -187,3 +187,15 @@ main {
 .star-empty {
   background-color: white;
 }
+.box {
+  background-color: gray;
+  height: 100px;
+  width: 100px;
+  border: 1px solid;
+  display: inline-block;
+  margin: 2px;
+}
+.on {
+  background-color: green;
+  color: yellow;
+}
