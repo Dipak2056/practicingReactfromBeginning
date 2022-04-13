@@ -1,6 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
-import { useState } from "react";
+import React, { useState } from "react";
 import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
 import { Card } from "./components/Card";
@@ -12,7 +12,9 @@ import Header from "./components/meme/Header";
 import Meme from "./components/meme/Meme";
 import boxesdata from "./boxes";
 import Boxes from "./components/meme/Boxes";
-
+import { Forms } from "./components/Forms";
+import APicall from "./components/APicall";
+import Windowtracker from "./components/Windowtracker";
 function App() {
   // const cards = data.map((item) => {
   //   return <Card key={item.id} item={item} />;
@@ -47,13 +49,27 @@ function App() {
   };
   //for the messages check
   const [messages, setmessages] = useState(["a", "b"]);
+
+  //for the apicall component
+  const [starwarData, setStarWarData] = useState({});
+  //fetching the data from the api end point
+  const [effectCount, setEffectCount] = useState(0);
+  const onAdd = () => {
+    return setEffectCount(effectCount + 1);
+  };
+  React.useEffect(
+    function () {
+      console.log("it is rendered");
+    },
+    [effectCount]
+  );
   return (
     <div className="App">
       <Navbar />
-      <button className="button" onClick={handleClick}>
+      {/* <button className="button" onClick={handleClick}>
         {isShown ? "show" : "hide"}
-      </button>
-      <div>{!isShown && <h2>hi i am visible</h2>}</div>
+      </button> */}
+      {/* <div>{!isShown && <h2>hi i am visible</h2>}</div>
       <div>
         {messages.length === 0 ? (
           <p>you have unread messages</p>
@@ -62,15 +78,20 @@ function App() {
         )}
       </div>
       <hr />
-      {squareElements}
+      {squareElements} */}
       {/* <Hero />
       <section className="cards-list">{cards}</section>
       <section className="travel-journal">
         {" "}
         <TravelJournal travelcard={travelcard} />
       </section> */}
-      <Header user={user} />
-      <Meme user={user} />
+      {/* <Header user={user} />
+      <Meme user={user} />  */}
+      {/* <Forms /> */}
+      {/* <APicall />
+      <p>{effectCount}</p>
+      <button onClick={onAdd}>Add</button> */}
+      <Windowtracker />
     </div>
   );
 }
